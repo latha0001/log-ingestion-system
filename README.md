@@ -33,15 +33,15 @@ Each log entry contains:
 ### Installation
 
 1. Clone the repository:
-\`\`\`bash
-git clone <repository-url>
+``bash
+git clone https://github.com/latha0001/log-ingestion-system
 cd log-ingestion-system
-\`\`\`
+``
 
 2. Install dependencies:
-\`\`\`bash
+``bash
 npm install
-\`\`\`
+``
 
 3. Start the development server:
 \`\`\`bash
