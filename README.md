@@ -51,6 +51,7 @@ npm run dev
 4. Open your browser and navigate to:
 - Main interface: http://localhost:3000
 - Test interface: http://localhost:3000/test
+- Vercel Demo Live Link: https://log-ten-tawny.vercel.app/
 
 ### Ingesting Logs
 
