@@ -44,21 +44,19 @@ npm install
 ```
 
 3. Start the development server:
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 4. Open your browser and navigate to:
 - Main interface: http://localhost:3000
 - Test interface: http://localhost:3000/test
 
-## Usage
-
 ### Ingesting Logs
 
 Send a POST request to `/api/logs` with a JSON payload:
 
-\`\`\`bash
+```bash
 curl -X POST http://localhost:3000/api/logs \
   -H "Content-Type: application/json" \
   -d '{
@@ -71,13 +69,13 @@ curl -X POST http://localhost:3000/api/logs \
     "commit": "5e5342f",
     "metadata": {"errorCode": "DB_CONN_FAILED"}
   }'
-\`\`\`
+```
 
 ### Querying Logs
 
 Query logs with optional filters:
 
-\`\`\`bash
+```bash
 # Get all logs
 curl http://localhost:3000/api/logs
 
@@ -86,7 +84,7 @@ curl "http://localhost:3000/api/logs?level=error&message=database"
 
 # Filter by time range
 curl "http://localhost:3000/api/logs?timestamp_start=2023-09-15T00:00:00Z&timestamp_end=2023-09-15T23:59:59Z"
-\`\`\`
+```
 
 ### Using the Web Interface
 
@@ -100,8 +98,7 @@ curl "http://localhost:3000/api/logs?timestamp_start=2023-09-15T00:00:00Z&timest
    - Create custom log entries
    - Monitor ingestion results
 
-## Architecture Decisions
-
+### Architecture Decisions
 ### Data Persistence
 - **JSON File Storage**: Uses a single `logs.json` file as specified in requirements
 - **In-Memory Filtering**: All filtering logic implemented in Node.js using native Array methods
@@ -125,7 +122,7 @@ curl "http://localhost:3000/api/logs?timestamp_start=2023-09-15T00:00:00Z&timest
 
 ## Project Structure
 
-\`\`\`
+```
 ├── app/
 │   ├── api/logs/route.ts      # Backend API endpoints
 │   ├── test/page.tsx          # Test interface for log ingestion
@@ -136,9 +133,9 @@ curl "http://localhost:3000/api/logs?timestamp_start=2023-09-15T00:00:00Z&timest
 ├── lib/utils.ts               # Utility functions
 ├── logs.json                  # Log data storage
 └── README.md                  # This file
-\`\`\`
+```
 
-## Testing
+### Testing
 
 ### Manual Testing
 1. Use the test interface at `/test` to ingest sample data
@@ -148,7 +145,7 @@ curl "http://localhost:3000/api/logs?timestamp_start=2023-09-15T00:00:00Z&timest
 ### API Testing
 Use curl or Postman to test the API endpoints directly:
 
-\`\`\`bash
+```bash
 # Test log ingestion
 curl -X POST http://localhost:3000/api/logs \
   -H "Content-Type: application/json" \
@@ -156,9 +153,9 @@ curl -X POST http://localhost:3000/api/logs \
 
 # Test log querying
 curl "http://localhost:3000/api/logs?level=error"
-\`\`\`
+```
 
-## Future Enhancements
+### Future Enhancements
 
 - WebSocket integration for real-time log streaming
 - Basic analytics dashboard with charts
@@ -166,7 +163,7 @@ curl "http://localhost:3000/api/logs?level=error"
 - Advanced search with regex support
 - Log retention policies and archiving
 
-## Technical Specifications Met
+### Technical Specifications Met
 
 - Node.js + Express backend (Next.js API routes)  
 - React frontend with hooks-based architecture  
